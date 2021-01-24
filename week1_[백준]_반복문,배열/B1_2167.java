@@ -4,11 +4,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class b_2167 {
+//백준 브론즈1 2167 2차원 배열의 합
+public class B1_2167 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		System.setIn(new FileInputStream("week1/b_2167.txt"));
+		System.setIn(new FileInputStream("week1/B1_2167.txt"));
 
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();

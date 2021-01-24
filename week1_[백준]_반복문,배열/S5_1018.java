@@ -4,14 +4,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class s_1018 {
+//백준 실버5 1018 체스판 다시 칠하기
+public class S5_1018 {
 
 	static char board[][];
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		
-//		System.setIn(new FileInputStream("week1/s_1018_1"));
-		System.setIn(new FileInputStream("week1/s_1018_2"));
+//		System.setIn(new FileInputStream("week1/S5_1018_1.txt"));
+		System.setIn(new FileInputStream("week1/S5_1018_2.txt"));
 		
 		Scanner sc = new Scanner(System.in);
 		

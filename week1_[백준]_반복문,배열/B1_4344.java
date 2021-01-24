@@ -4,10 +4,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class b_4344 {
+//백준 브론즈1 4344 평균은 넘겠지
+public class B1_4344 {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("week1/b_4344.txt"));
+		System.setIn(new FileInputStream("week1/B1_4344.txt"));
 		
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();

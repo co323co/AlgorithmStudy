@@ -4,7 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class s_3085 {
+//백준 실버4 3085 사탕게임
+public class S4_3085 {
 
 	static char[][] board;
 	static int N;
@@ -12,7 +13,7 @@ public class s_3085 {
 	public static void main(String[] args) {
 		
 		try {
-			System.setIn(new FileInputStream("week1/s_3085.txt"));
+			System.setIn(new FileInputStream("week1/S4_3085.txt"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
