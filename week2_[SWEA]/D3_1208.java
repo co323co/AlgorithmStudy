@@ -3,7 +3,7 @@ package week2;
 import java.io.FileInputStream;
 import java.util.Scanner;
 
-//SWEA D3 1208 [S/W 문제해결 기본] 1일차 - Flatten
+//SWEA D3 1208. [S/W 문제해결 기본] 1일차 - Flatten
 public class D3_1208 {
 
 	public static void main(String args[]) throws Exception
