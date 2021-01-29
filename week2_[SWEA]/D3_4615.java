@@ -102,7 +102,6 @@ public class D3_4615 {
 
 }
 
-
 class Pair {
 	int r, c;
 	Pair(int r, int c){
