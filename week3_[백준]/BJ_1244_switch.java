@@ -2,14 +2,14 @@ package hw_20210201;
 
 import java.util.Scanner;
 
-//¹éÁØ ½Ç¹ö4 1244. ½ºÀ§Ä¡ ÄÑ°í ²ô±â
+//ë°±ì¤€ ì‹¤ë²„4 1244. ìŠ¤ìœ„ì¹˜ ì¼œê³  ë„ê¸°
 public class BJ_1244_switch {
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		//1¹ø ½ºÀ§Ä¡ºÎÅÍ ½ÃÀÛ~!
+		//1ë²ˆ ìŠ¤ìœ„ì¹˜ë¶€í„° ì‹œì‘~!
 		int SN = sc.nextInt() + 1;
 		boolean[] swh = new boolean[SN];
 		for(int i=1; i<SN; i++) {
@@ -17,14 +17,14 @@ public class BJ_1244_switch {
 			swh[i]=(tmp==0)?false:true;
 		}
 		
-		int s = sc.nextInt();	//ÇĞ»ı ¼ö
+		int s = sc.nextInt();	//í•™ìƒ ìˆ˜
 		
 		for(int i=0; i<s; i++) {
 		
-			int g = sc.nextInt();	//1ÀÌ¸é ³²ÀÚ 2¸é ¿©ÀÚ
+			int g = sc.nextInt();	//1ì´ë©´ ë‚¨ì 2ë©´ ì—¬ì
 			int num = sc.nextInt();
 			
-			//ÀÌ ºÎºĞ ½Ç¼ö ÁÖÀÇ...!!
+			//ì´ ë¶€ë¶„ ì‹¤ìˆ˜ ì£¼ì˜...!!
 			if(g==1) for(int n=num; n<SN; n+=num) swh[n]=!swh[n];
 			
 			else if(g==2) {

@@ -3,7 +3,7 @@ package hw_20210201;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//SWEA D3 1289. ¿øÀçÀÇ ¸Ş¸ğ¸® º¹±¸ÇÏ±â
+//SWEA D3 1289. ì›ì¬ì˜ ë©”ëª¨ë¦¬ ë³µêµ¬í•˜ê¸°
 public class SWEA_1289_memory {
 	public static void main(String args[]) throws Exception
 	{
