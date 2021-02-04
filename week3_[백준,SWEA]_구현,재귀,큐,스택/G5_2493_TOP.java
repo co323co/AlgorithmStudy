@@ -7,7 +7,7 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 //백준 골드5 2943 탑
-//스택, 최적화 문제, 입력이 50만임
+//스택,,최적화 문제, 입력이 50만임
 public class G5_2493_TOP {
  
 	public static void main(String[] args) throws IOException {
