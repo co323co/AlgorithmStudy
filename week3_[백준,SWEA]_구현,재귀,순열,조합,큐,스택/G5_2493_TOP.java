@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 //백준 골드5 2943 탑
 //최적화 문제, 입력이 50만임
 public class G5_2493_TOP {
-
+ 
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

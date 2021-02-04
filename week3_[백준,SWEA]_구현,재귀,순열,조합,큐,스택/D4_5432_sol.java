@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 import java.util.Stack;
-
+    
 public class D4_5432_sol {
 
 	//20210204
