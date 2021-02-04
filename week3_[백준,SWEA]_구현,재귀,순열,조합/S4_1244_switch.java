@@ -3,7 +3,7 @@ package hw_20210201;
 import java.util.Scanner;
 
 //백준 실버4 1244. 스위치 켜고 끄기
-public class BJ_1244_switch {
+public class S4_1244_switch {
 
 	public static void main(String[] args) {
 		

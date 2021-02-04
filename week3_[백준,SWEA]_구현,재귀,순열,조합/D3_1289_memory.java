@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //SWEA D3 1289. 원재의 메모리 복구하기
-public class SWEA_1289_memory {
+public class D3_1289_memory {
 	public static void main(String args[]) throws Exception
 	{
 		Scanner sc = new Scanner(System.in);
