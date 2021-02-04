@@ -3,7 +3,7 @@
 import java.util.Scanner;
 import java.util.Stack;
     
-public class D4_5432_sol {
+public class D4_5432 {
 
 	//20210204
 	//SWEA D4 5432. 쇠막대기 자르기
