@@ -1,43 +1,41 @@
-package week1;
-
+package week2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class BJ_G4_도시분할계획_pq {
+//pq 프림 방식으로 구현
+public class BJ_G4_1197_최소스패닝트리 {
 
 	static class Edge implements Comparable<Edge>{
-		int node, cost;
+		int node; //도착노드
+		int cost;
 		public Edge(int node, int cost) {
 			this.node = node;
 			this.cost = cost;
 		}
 		@Override
-		public int compareTo(Edge o) {
-			return cost-o.cost;
-		}
-		@Override
 		public String toString() {
 			return "(" + node + "," + cost + ")";
 		}
+		@Override
+		public int compareTo(Edge o) {
+			return cost-o.cost;
+		}
 	}
-	
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		int V = Integer.parseInt(st.nextToken());
+		int E = Integer.parseInt(st.nextToken());
+		boolean[] visited = new boolean[V];
 		
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
-		
-		//인접리스트 만들기
-		ArrayList<ArrayList<Edge>> adjList = new ArrayList<>();
-		for(int i=0; i<N; i++) adjList.add(new ArrayList<>());
-		for(int i=0; i<M; i++) {
+		ArrayList<ArrayList<Edge>> adjList = new ArrayList<>(); 
+		for(int i=0; i<V; i++) adjList.add(new ArrayList<>());
+		for(int i=0; i<E; i++) {
 			st = new StringTokenizer(br.readLine());
 			int from = Integer.parseInt(st.nextToken())-1;
 			int to = Integer.parseInt(st.nextToken())-1;
@@ -45,28 +43,23 @@ public class BJ_G4_도시분할계획_pq {
 			adjList.get(from).add(new Edge(to, cost));
 			adjList.get(to).add(new Edge(from, cost));
 		}
-
-		boolean[] v = new boolean[N];
-
+		
 		PriorityQueue<Edge> pq = new PriorityQueue<>();
-		
-		//0번째 정점부터 시작
-		pq.add(new Edge(0, 0));
-		
-		int sum=0, max=0;
+		pq.add(new Edge(0, 0)); //0번째 노드에서 시작
+
+		int result = 0;
 		while(!pq.isEmpty()) {
-//			System.out.println(pq);
+			
+			//가중치 가장 낮은 노드 선택
 			Edge curr = pq.poll();
-			if(v[curr.node]) continue;	//넣을때는 방문안했어도, 그 사이에 쌓여서 나중에 poll했을 때는 이미 방문한 애일 수 있음
-			v[curr.node] = true;
-//			System.out.println(curr.node+","+curr.cost);
-			sum += curr.cost;
-			max = Math.max(curr.cost, max);
+			if(visited[curr.node]) continue;
+			visited[curr.node] = true;
+			result+=curr.cost;
 			for(Edge e : adjList.get(curr.node)) {
-				if(!v[e.node]) pq.add(e);
+				if(!visited[e.node]) pq.add(e);
 			}
 		}
-		System.out.println(sum-max);
+		System.out.println(result);
 	}
 
 }

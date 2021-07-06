@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 //백준 골드5 15686 치킨배달
-public class G5_15686_치킨배달 {
+public class BJ_G5_15686_치킨배달 {
 
 	static class Pos {
 		int r, c;
