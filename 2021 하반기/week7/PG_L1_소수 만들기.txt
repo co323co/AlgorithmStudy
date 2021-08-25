@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Solution {
+    static int answer = 0;
+    public int solution(int[] nums) {
+        combination(0, 0, new int[3], nums);
+        return answer;
+    }
+    
+    static void combination(int start, int k, int[] sel, int[] nums){
+    if(k==3){
+        //System.out.println(Arrays.toString(sel));
+        int num = sel[0] + sel[1] + sel[2];
+        if(isPrime(num)){
+            //System.out.println(num);
+            answer++;
+        }
+        return;
+    }
+        
+    for(int i=start; i<nums.length; i++){
+        sel[k] = nums[i];
+        combination(i+1, k+1, sel, nums);    
+        
+    }
+    
+    }
+    
+    static boolean isPrime(int num){
+        for(int i=2; i<=Math.sqrt(num); i++){
+            if(num%i==0) return false;
+        }
+        return true;
+    }
+}
