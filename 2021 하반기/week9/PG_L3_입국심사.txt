@@ -1,0 +1,24 @@
+import java.util.*;
+
+//이분탐색 문제
+class Solution {
+    public long solution(int n, int[] times) {
+        long answer = Long.MAX_VALUE;
+        Arrays.sort(times);
+        long start = 0; 
+        //int * int면 int가 되어버려 오버플로우가 생길 수 있음
+        long end = (long)n*times[times.length-1]; //가장 오래 걸리는 시간
+        while(start<=end){
+            long middle = (start+end)/2;
+            long cnt = 0;    //해당 분동안 총 처리할 수 있는 인원 수
+            for(int t : times) cnt+=middle/t; // + 해당 분동안 각 심사관이 처리하는 인원 수 
+            if(cnt>=n){ //목표 이상으로 처리함
+                answer = Math.min(answer,middle);
+                end = middle-1; //시간을 더 줄임
+            } else{ //목표보다 더 적게 처리함
+                start = middle+1; //시간을 더 늘림
+            }
+        }
+        return answer;
+    }
+}
