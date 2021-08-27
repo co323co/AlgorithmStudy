@@ -31,7 +31,6 @@ public class BJ_G5_1107_리모컨 {
 		System.out.println(getMin());
 
 	}
-
 	//해당 채널을 숫자버튼으로 이동할 수 있는지 체크
 	static boolean canMove(int goal) {
 		String to = Integer.toString(goal);
