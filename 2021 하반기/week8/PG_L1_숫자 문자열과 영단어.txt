@@ -1,0 +1,10 @@
+class Solution {
+    public int solution(String s) {
+        String[] strs ={"zero","one","two","three","four","five","six","seven","eight","nine"};
+        String str = s;
+        for(int i=0; i<strs.length; i++){
+            str = str.replace(strs[i], i+"");
+        }
+        return Integer.parseInt(str);
+    }
+}
