@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    static Set<Integer> set = new HashSet();
+    public int[] solution(int[] numbers) {
+        combination(0,0,new int[2], numbers);
+        int[] answer = set.stream().mapToInt(i -> i).toArray();
+        Arrays.sort(answer);
+        return answer;
+    }
+    
+    static public void combination(int start, int k, int[] sel, int[] numbers){
+        if(k==sel.length) {
+            set.add(sel[0]+sel[1]);
+            return;
+        }
+        
+        for(int i=start; i<numbers.length; i++){
+            sel[k]=numbers[i];
+            combination(i+1, k+1, sel, numbers);
+        }
+    }
+}
