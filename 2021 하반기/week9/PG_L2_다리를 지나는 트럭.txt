@@ -1,0 +1,30 @@
+import java.util.*;
+class Solution {
+    public int solution(int bridge_length, int weight, int[] truck_weights) {
+        int answer = 0;
+        LinkedList<int[]> going = new LinkedList<int[]>();
+        LinkedList<Integer> waiting = new LinkedList<Integer>();
+        for(int w : truck_weights) waiting.add(w);
+        int total = 0; //다리 위에 올라가있는 트럭의 총 무게
+        while(true){
+            answer++;
+            for(int i=0; i<going.size(); i++) {
+                int[] truck = going.get(i);
+                if(++truck[1]==bridge_length) {
+                    total-=truck[0];
+                    going.remove(i);
+                    i--;
+                }
+            }
+            if(!waiting.isEmpty() 
+               && total+waiting.peek()<=weight 
+               && going.size()+1<=bridge_length){
+              int val = waiting.poll();
+              going.add(new int[]{val,0});
+              total+=val;  
+            }            
+            if(going.isEmpty()) break;
+        }
+        return answer;
+    }
+}

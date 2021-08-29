@@ -1,0 +1,34 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String[] table, String[] languages, int[] preference) {
+        String[][] tables = new String[5][6];
+        StringTokenizer st;
+        for(int i=0; i<5; i++){
+            st = new StringTokenizer(table[i]);
+            for(int j=0; j<6; j++) {
+                tables[i][j] = st.nextToken();
+            }
+        }
+        String answer = "";
+        int maxScore = 0;
+        for(int i=0; i<5; i++){ //직업군별
+            int score = 0;
+            for(int j=0; j<languages.length; j++){ //선호언어별
+                int idx = Arrays.binarySearch(tables[i], languages[j]);
+                System.out.println(Arrays.toString(tables[i])+","+languages[j]);
+                System.out.println(languages[j]+","+idx);
+                if(idx<0) continue;
+                score+= preference[j] * (6-idx);
+            }
+            System.out.println(tables[i][0]+","+score);
+            if(maxScore<score){
+                answer = tables[i][0];
+                maxScore = score;
+            } else if(maxScore==score){
+                if(answer.compareTo(tables[i][0])>0) answer = tables[i][0];
+            }
+        }
+        return answer;
+    }
+}

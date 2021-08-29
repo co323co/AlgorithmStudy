@@ -144,6 +144,9 @@
     프로그래머스    LEVEL1   숫자 문자열과 영단어           (2021 카카오 채용연계형 인턴십)
 
 ##### week9 (2021.08.23 ~ 2021.08.29)
-    프로그래머스    LEVEL1   [1차] 다트 게임    (2018 KAKAO BLIND RECRUITMENT)
-    프로그래머스    LEVEL1   [1차] 비밀지도     (2018 KAKAO BLIND RECRUITMENT)
-    프로그래머스    LEVEL3   입국심사           (이분탐색)
+    프로그래머스    LEVEL1   [1차] 다트 게임        (2018 KAKAO BLIND RECRUITMENT)
+    프로그래머스    LEVEL1   [1차] 비밀지도         (2018 KAKAO BLIND RECRUITMENT)
+    프로그래머스    LEVEL3   입국심사               (이분탐색)
+    프로그래머스    LEVEL1   4주차 직업군 추천하기  (위클리 챌린지)
+    프로그래머스    LEVEL1   완주하지 못한 선수     (해시)
+    프로그래머스    LEVEL2   다리를 지나는 트럭     (스택/큐)
