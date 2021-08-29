@@ -95,7 +95,6 @@ public class BJ_G5_14502_연구소 {
 		}
 		return cnt;
 	}
-
 	static void printMap(int[][] map) {
 		for(int i=0; i<N; i++) {
 			for(int j=0; j<M; j++) {
