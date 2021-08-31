@@ -1,0 +1,37 @@
+import java.util.*;
+class Solution {
+
+    public String[] solution(String[] record) {
+        ArrayList<String> answer = new ArrayList<String>();
+        Map<String, String> map = new HashMap();
+        StringTokenizer st;
+        //최종 닉네임 기록
+        for(int i=record.length-1; i>=0; i--){
+            st = new StringTokenizer(record[i]);
+            String command = st.nextToken();
+            if(command.equals("Leave")) continue;
+            String uid = st.nextToken();
+            String nickname = st.nextToken();
+            if((command.equals("Enter") || command.equals("Change")) 
+               && map.get(uid)==null){
+                map.put(uid,nickname);
+            }
+        }
+        //채팅메시지로 바꾸기
+        for(int i=0; i<record.length; i++){
+            st = new StringTokenizer(record[i]);
+            String command = st.nextToken();
+            String uid = st.nextToken();
+            String str = map.get(uid)+"님이 ";
+            if(command.equals("Change")) continue;
+            else if(command.equals("Enter")){
+                str+="들어왔습니다.";
+            }
+            else{
+                str+="나갔습니다.";
+            } 
+            answer.add(str);
+        }
+        return answer.toArray(new String[answer.size()]);
+    }
+}
