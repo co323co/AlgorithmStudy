@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class Solution {
+    public int[] solution(int []arr) {
+        ArrayList<Integer> list = new ArrayList();
+        int before = -1;
+        for(int i : arr){
+            if(before==i) continue;
+            list.add(i);
+            before=i;
+        }
+        return list.stream().mapToInt(i->i.intValue()).toArray();
+    }
+}
