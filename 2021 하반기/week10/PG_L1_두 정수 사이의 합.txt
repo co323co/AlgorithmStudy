@@ -1,0 +1,7 @@
+class Solution {
+    public long solution(int a, int b) {
+        double answer = (a+b)/2.0*(Math.abs(b-a)+1);
+        return Math.round(answer);
+    }
+}
+
