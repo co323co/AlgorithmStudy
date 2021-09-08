@@ -153,3 +153,21 @@
 ##### week10 (2021.08.30 ~ 2021.09.05)
     프로그래머스    LEVEL2   오픈채팅방            (2019 KAKAO BLIND RECRUITMENT) 
     프로그래머스    LEVEL1   콜라츠 추측     
+    프로그래머스    LEVEL1   모의고사   
+    프로그래머스    LEVEL1   가운데 글자 가져오기
+    프로그래머스    LEVEL1   두 정수 사이의 합
+    프로그래머스    LEVEL1   문자열 내 p와 y의 개수
+    프로그래머스    LEVEL1   같은 숫자는 싫어
+    프로그래머스    LEVEL1   문자열 내림차순으로 배치하기
+    프로그래머스    LEVEL1   문자열 내 마음대로 정렬하기
+    프로그래머스    LEVEL1   직사각형 별찍기
+    프로그래머스    LEVEL1   평균 구하기
+    프로그래머스    LEVEL1   나누어 떨어지는 숫자 배열
+    프로그래머스    LEVEL1   체육복             (그리디)
+    프로그래머스    LEVEL1   실패율             (2019 KAKAO BLIND RECRUITMENT) 
+    프로그래머스    LEVEL2   기능개발           (스택/큐)
+
+##### week11 (2021.09.06 ~ 2021.09.12)
+    프로그래머스    LEVEL2   가장 큰 수         (정렬) 
+    프로그래머스    LEVEL2   문자열 압축        (2020 KAKAO BLIND RECRUITMENT)
+
