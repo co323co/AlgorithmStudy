@@ -1,0 +1,25 @@
+import java.util.*;
+class Solution {
+    public String solution(String new_id) {
+        new_id = new_id.toLowerCase(); //1단계
+        StringBuilder sb = new StringBuilder();
+        for(char c : new_id.toCharArray()){
+            if(c>='a' && c<='z') sb.append(c); //2단계
+            else if(c>='0' && c<='9') sb.append(c);
+            else if(c=='-'||c=='_') sb.append(c);
+            else if(c=='.'  //3단계
+                    && sb.length()>0 
+                    && sb.charAt(sb.length()-1)!='.') 
+                sb.append(c);
+        }
+        if(sb.length()>0 && sb.charAt(0)=='.') sb.deleteCharAt(0); //4단계
+        if(sb.length() > 0 && sb.charAt(sb.length()-1)=='.') sb.deleteCharAt(sb.length()-1);
+        if(sb.length()==0) sb.append('a'); //5단계
+        if(sb.length()>15) { //6단계
+            sb.delete(15,sb.length()); 
+            if(sb.charAt(sb.length()-1)=='.') sb.deleteCharAt(sb.length()-1);
+        }
+        while(sb.length()<3) sb.append(sb.charAt(sb.length()-1)); //7단계
+        return sb.toString();
+    }
+}
