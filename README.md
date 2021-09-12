@@ -172,3 +172,4 @@
     프로그래머스    LEVEL2   문자열 압축            (2020 KAKAO BLIND RECRUITMENT)
     프로그래머스    LEVEL1   신규 아이디 추천       (2021 KAKAO BLIND RECRUITMENT)
     프로그래머스    LEVEL2   카카오프렌즈 컬러링북  (2017 카카오코드 예선)
+    프로그래머스    LEVEL3   정수 삼각형            (DP)
