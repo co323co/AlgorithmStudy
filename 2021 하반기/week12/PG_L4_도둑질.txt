@@ -1,0 +1,30 @@
+import java.util.*;
+//집 개수가 100만, O(N^2)안으로 끝내야 함!
+class Solution {
+    public int solution(int[] money) {
+        //i-1 번째 집까지 털었을 경우 얻을 수 있는 최대 값
+        int[] dp1 = new int[money.length]; //첫번째 집을 털 경우
+        int[] dp2 = new int[money.length]; //첫번째 집을 털지 않을 경우
+        
+        //첫번째 집을 털 경우
+        dp1[0] = money[0];
+        dp1[1] = dp1[0];
+        
+        //첫번째 집을 털지 않을 경우
+        dp2[1] = money[1];
+        for(int i=2; i<money.length; i++){
+            //현재 집을 안털 경우(이전집 값 그대로) vs 현재 집을 털 경우(2번째 전 집값 + 현재 집값)
+            dp1[i] = Math.max(dp1[i-1], dp1[i-2]+money[i]);
+            dp2[i] = Math.max(dp2[i-1], dp2[i-2]+money[i]);
+        }
+        
+        //첫번째 집을 턴 경우 마지막 집은 인접해서 털지 못함
+        dp1[dp1.length-1] = dp1[dp1.length-2];
+        
+        // System.out.println(Arrays.toString(dp1));
+        // System.out.println(Arrays.toString(dp2));
+                              
+        int answer = Math.max(dp1[dp1.length-1], dp2[dp2.length-1]);
+        return answer;
+    }
+}
