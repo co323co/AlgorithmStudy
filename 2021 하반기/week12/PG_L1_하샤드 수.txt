@@ -1,0 +1,10 @@
+class Solution {
+    public boolean solution(int x) {
+        int hap = 0;
+        for(char c : Integer.toString(x).toCharArray()){
+            hap+=Integer.parseInt(c+"");
+        }
+        if(x%hap==0) return true;
+        else return false;
+    }
+}
