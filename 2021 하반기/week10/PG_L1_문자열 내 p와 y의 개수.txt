@@ -1,0 +1,11 @@
+class Solution {
+    boolean solution(String s) {
+        int numP=0, numY=0;
+        s = s.toUpperCase();
+        for(char c : s.toCharArray()) {
+            if(c=='P') numP++;
+            else if(c=='Y') numY++;
+        }
+        return numP==numY;
+    }
+}
