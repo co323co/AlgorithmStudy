@@ -1,0 +1,36 @@
+import java.util.*;
+class Solution {
+    class Task{
+        int progress;
+        int speed;
+        Task(int p, int s){
+            progress=p;
+            speed=s;
+        }
+    }
+    public int[] solution(int[] progresses, int[] speeds) {
+        LinkedList<Task> tasks = new LinkedList<Task>();
+        LinkedList<Integer> weeks = new LinkedList();
+        for(int i=0; i<progresses.length; i++){
+            tasks.add(new Task(progresses[i],speeds[i]));   
+        }
+        while(!tasks.isEmpty()){
+            int n=0;
+            //진행률 up
+            for(Task t : tasks){
+                t.progress+=t.speed;
+            }
+            //앞에서부터 100% 넘는 애들 배포
+            for(int i=0; i<tasks.size(); i++){
+                Task t = tasks.get(i);
+                if(t.progress>=100){
+                    n++;
+                    tasks.poll();
+                    i--;
+                } else break;
+            }
+            if(n>0) weeks.add(n);
+        }
+        return weeks.stream().mapToInt(i->i).toArray();
+    }
+}
