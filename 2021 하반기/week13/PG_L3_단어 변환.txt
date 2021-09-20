@@ -1,0 +1,51 @@
+import java.util.*;
+class Solution {
+    
+    public int solution(String begin, String target, String[] words) {
+        return bfs(begin, target, words);
+    }
+    
+    class Point{
+        String begin;
+        int num;
+        public Point(String _b, int _n){
+            begin=_b;
+            num=_n;
+        }
+    }
+     public int bfs(String begin, String target, String[] words) {
+        
+        LinkedList<Point> Q = new LinkedList();
+        boolean[] v = new boolean[words.length];
+        for(int i=0; i<words.length; i++){
+            if(canChange(begin, words[i])){
+                Q.add(new Point(words[i], 1));
+                v[i] = true;
+            }
+        }
+        while(!Q.isEmpty()){
+            
+            Point curr = Q.poll();
+            if(curr.begin.equals(target)){
+                return curr.num;
+            }
+            for(int i=0; i<words.length; i++){
+                if(v[i]) continue;
+                if(canChange(curr.begin, words[i])){
+                    Q.add(new Point(words[i], curr.num+1));
+                    v[i] = true;
+                }
+             }
+        }
+        return 0;
+    }
+    
+    public boolean canChange(String begin, String word) {
+        int num = 0;
+        for(int i=0; i<begin.length(); i++){
+            if(begin.charAt(i)!=word.charAt(i)) num++;
+        }
+        if(num>1) return false;
+        return true;
+    }
+}
