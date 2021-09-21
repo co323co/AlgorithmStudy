@@ -1,0 +1,62 @@
+import java.util.*;
+class Solution {
+    public int[] solution(String[] info, String[] query) {
+        int[] answer = new int[query.length];
+        Map<String, ArrayList<Integer>> map = new HashMap();
+        //맵에 삽입
+        for(String str : info){
+            String[] tokens = str.split(" ");
+            String[] keys = new String[16];
+            keys[0] = tokens[0]+tokens[1]+tokens[2]+tokens[3];
+            keys[1] = "-"+tokens[1]+tokens[2]+tokens[3];
+            keys[2] = tokens[0]+"-"+tokens[2]+tokens[3];
+            keys[3] = tokens[0]+tokens[1]+"-"+tokens[3];
+            keys[4] = tokens[0]+tokens[1]+tokens[2]+"-";
+            keys[5] = "-"+"-"+tokens[2]+tokens[3];
+            keys[6] = "-"+tokens[1]+"-"+tokens[3];
+            keys[7] = "-"+tokens[1]+tokens[2]+"-";
+            keys[8] = tokens[0]+"-"+"-"+tokens[3];
+            keys[9] = tokens[0]+"-"+tokens[2]+"-";
+            keys[10] = tokens[0]+tokens[1]+"-"+"-";
+            keys[11] = "-"+"-"+"-"+tokens[3];
+            keys[12] = "-"+"-"+tokens[2]+"-";
+            keys[13] = "-"+tokens[1]+"-"+"-";
+            keys[14] = tokens[0]+"-"+"-"+"-";
+            keys[15] = "----";
+            for(String key : keys){
+                ArrayList<Integer> list = map.get(key);
+                if(list==null) {
+                     list = new ArrayList();
+                     map.put(key,list);
+                }
+                list.add(Integer.parseInt(tokens[4]));
+            }
+        }
+        // System.out.println(map);
+        for(ArrayList list : map.values()){
+            Collections.sort(list);
+        }
+        //맵에서 검색
+        for(int i=0; i<query.length; i++){
+            String[] tokens = query[i].split(" ");
+            String key = tokens[0]+tokens[2]+tokens[4]+tokens[6];
+            ArrayList<Integer> list = map.get(key);
+            // System.out.println(tokens[7]+" " + key +", " + list);
+            // System.out.println(list);
+            if(list==null) continue;
+            int idx = Collections.binarySearch(list,Integer.parseInt(tokens[7]));
+            if(idx >= 0) {
+                for(int a=idx-1; a>=0; a--) {
+                    // if(list.get(idx)==list.get(a)) idx=a;
+                    if(list.get(idx)  > list.get(a)) break;
+                    idx = a;
+                }
+                answer[i] = list.size()-idx;
+            }
+            else {
+                answer[i] = list.size()+idx+1;
+            }
+        }
+        return answer;
+    }
+}
