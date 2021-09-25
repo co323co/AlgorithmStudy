@@ -188,3 +188,9 @@
     프로그래머스    LEVEL2   타겟 넘버              (DFS/BFS)
     프로그래머스    LEVEL2   튜플                   (2019 카카오 개발자 겨울 인턴십)
     
+##### week13 (2021.09.30 ~ 2021.09.26)
+    프로그래머스    LEVEL3   단어 변환              (DFS/BFS)  
+    프로그래머스    LEVEL2   순위 검색              (2021 KAKAO BLIND RECRUITMENT)
+    프로그래머스    LEVEL2   위장                   (해시)
+    백준    골드5   1916	 최소비용 구하기        (최단경로, 다익스트라)
+    프로그래머스    LEVEL2   후보키                   (2019 KAKAO BLIND RECRUITMENT) 
