@@ -1,0 +1,54 @@
+import java.util.*;
+class Solution {
+    static String[][] rows;
+    static ArrayList<Set<Integer>> candidateKeys = new ArrayList();
+    static int columnCnt; //속성 개수
+    public int solution(String[][] relation) {
+        rows = relation;
+        columnCnt = relation[0].length;
+        //속성이 1개인경우, 2개인경우 .... N개인 경우 순서대로 모든 경우의 집합을 만들어 본다
+        for(int i=1; i<=columnCnt; i++) {
+            powerSet(i,0,0,new boolean[columnCnt]);
+        }
+        return candidateKeys.size();
+    }
+    
+    static void powerSet(int length, int idx, int k, boolean[] sel) {
+		if(idx==sel.length) {
+//			몇개짜리 부분집합인지 고를 수 있음
+			if(k==length) {
+                Set<Integer> set = new HashSet();
+				for(int i=0; i<sel.length; i++) if(sel[i]) set.add(i);
+                //최소성, 유일성 만족하면 후보키임
+                if(isMinimal(set) && isUnique(set)) candidateKeys.add(set);
+			}
+			return;
+		}
+		//뽑는 경우
+		sel[idx]=true;
+		powerSet(length, idx+1,k+1,sel);
+		//안뽑는 경우
+		sel[idx]=false;
+		powerSet(length, idx+1, k, sel);
+	}
+    
+    static boolean isUnique(Set set){
+        Set<String> values = new HashSet();
+        for(String[] row : rows){
+            String key="";
+            for(int i=0; i<row.length; i++){
+                if(set.contains(i)) key+=row[i];
+            }
+            if(values.contains(key)) return false; 
+            else values.add(key);  //중복되는 경우를 가지고있지 않음
+        }
+        return true;
+    }
+    static boolean isMinimal(Set set){
+        //이미 기존의 후보키를 포함하는 슈퍼키임
+        for(Set<Integer> candidateKey : candidateKeys){
+            if(set.containsAll(candidateKey)) return false;
+        }
+        return true;
+    }
+}
