@@ -1,0 +1,25 @@
+import java.util.*;
+/*
+brown+yellow => 넓이
+AxB==넓이인 경우를 구해서 완전탐색
+    => (A+B)*2-4 == brown인 경우를 구한다!
+*/
+class Solution {
+    public int[] solution(int brown, int yellow) {
+        int[] answer = {};
+        int area = brown + yellow;
+        for(int i=1; i<=Math.sqrt(area); i++){
+            if(area%i==0) {
+                if(isCollect(i,area/i,brown)){
+                    answer = new int[] {area/i,i};
+                    break;
+                }
+            }
+        }
+        return answer;
+    }
+    static boolean isCollect(int A, int B, int brown){
+        if((A+B)*2-4 == brown) return true;
+        else return false;
+    }
+}
