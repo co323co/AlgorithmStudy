@@ -1,0 +1,37 @@
+import java.util.*;
+class Solution {
+    static Set<Integer> primeSet = new HashSet();
+    static boolean[] prime = new boolean[10000000];
+    public int solution(String numbers) {
+        //소수 구하기
+        Arrays.fill(prime,2,prime.length,true);
+        for(int i=2; i<prime.length; i++){
+            if(!prime[2]) continue;
+            for(int j=i*2; j<prime.length; j+=i)
+                prime[j]=false;
+        }
+        // 1~종이 수만큼씩 각각 순열 만들기
+        for(int size=1; size<=numbers.length(); size++){
+             permutation(numbers, 0, new char[size], new boolean[numbers.length()]);            
+        }
+        return primeSet.size();
+    }
+    
+    //size만큼의 종이를 뽑아서 만들 수 있는 숫자 구하기 (순열) 
+    static void permutation(String numbers, int k, char[] sel, boolean[] v){
+        if(k==sel.length){
+            String str = "";
+            for(char c : sel) str+=c;
+            int num = Integer.parseInt(str);
+            if(prime[num]) primeSet.add(num);
+            return;
+        }
+        for(int i=0; i<numbers.length(); i++){
+            if(v[i]) continue;
+            v[i] = true;
+            sel[k] = numbers.charAt(i);
+            permutation(numbers, k+1, sel, v);
+            v[i] = false;
+        }
+    }
+}
