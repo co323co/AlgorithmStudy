@@ -1,3 +1,5 @@
+package 프로그래머스;
+
 import java.util.Arrays;
 
 public class L2_양궁대회 {

@@ -1,3 +1,5 @@
+package 프로그래머스;
+
 import java.util.*;
 public class L1_신고_결과_받기 {
     public static void main(String[] args) {
